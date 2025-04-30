@@ -1,0 +1,1 @@
+Eu quero criar um portfolio web, inicialmente com somente uma pagina e nessa pagina deve conter meu nome (Romulo Pontes Menon) e minha ocupação, além de um link que redirecione para o meu linkedin e uma breve descrição da pagina. gostaria de hospedar esse site statico gratuitamente na vercel.
