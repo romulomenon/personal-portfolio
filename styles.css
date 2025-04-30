@@ -453,7 +453,7 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.about, .skills, .experience, .education, .contact {
+.about, .skills, .experience, .education, .contact, .cv-download {
     animation: fadeIn 1s forwards;
     opacity: 0;
 }
@@ -463,14 +463,18 @@ footer {
 }
 
 .experience {
-    animation-delay: 0.6s;
+    animation-delay: 0.4s;
 }
 
 .education {
-    animation-delay: 0.8s;
+    animation-delay: 0.6s;
 }
 
 .contact {
+    animation-delay: 0.8s;
+}
+
+.cv-download {
     animation-delay: 1s;
 }
 
@@ -689,4 +693,48 @@ footer {
 .education-item p {
     color: var(--color-text-light);
     font-size: 0.95rem;
+}
+
+/* CV Download Section */
+.cv-download h2::before {
+    background-color: #ef4444;
+}
+
+.cv-download p {
+    margin-bottom: var(--spacing-sm);
+    background-color: rgba(239, 68, 68, 0.05);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    border-left: 3px solid #ef4444;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    background-color: #ef4444;
+    border: 2px solid #ef4444;
+    box-shadow: var(--shadow-sm);
+}
+
+.download-btn i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.download-btn:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 } 
