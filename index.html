@@ -3,33 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profissional de Romulo Pontes Menon, Desenvolvedor Web">
     <title>Romulo Pontes Menon - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Romulo Pontes Menon</h1>
             <p class="occupation">Desenvolvedor Web</p>
+            <div class="header-buttons">
+                <a href="#contact" class="btn-contact">Entre em Contato</a>
+            </div>
         </header>
         
         <main>
-            <section class="about">
+            <section class="about" id="about">
                 <h2>Sobre Mim</h2>
-                <p>Bem-vindo ao meu portfolio! Sou um profissional apaixonado por tecnologia e desenvolvimento web.</p>
+                <p>Bem-vindo ao meu portfolio! Sou um profissional apaixonado por tecnologia e desenvolvimento web, especializado em criar soluções web modernas e responsivas. Meu objetivo é desenvolver aplicações que proporcionem uma excelente experiência ao usuário.</p>
             </section>
             
-            <section class="contact">
+            <section class="skills" id="skills">
+                <h2>Habilidades</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Front-end</h3>
+                        <ul class="skill-list">
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Ferramentas</h3>
+                        <ul class="skill-list">
+                            <li>Git</li>
+                            <li>VS Code</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="contact" id="contact">
                 <h2>Contato</h2>
-                <a href="https://www.linkedin.com/in/romulomenon/" target="_blank" class="linkedin-btn">
-                    Conecte-se no LinkedIn
-                </a>
+                <p>Interessado em trabalhar juntos? Entre em contato comigo pelos canais abaixo:</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/romulomenon/" target="_blank" class="linkedin-btn">
+                        LinkedIn
+                    </a>
+                    <a href="mailto:contato@exemplo.com" class="email-btn">
+                        Email
+                    </a>
+                </div>
             </section>
         </main>
         
         <footer>
-            <p>&copy; 2024 Romulo Pontes Menon. Todos os direitos reservados.</p>
+            <p>&copy; <span id="year">2024</span> Romulo Pontes Menon. Todos os direitos reservados.</p>
+            <script>
+                document.getElementById('year').textContent = new Date().getFullYear();
+            </script>
         </footer>
     </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight section when in viewport
+        const sections = document.querySelectorAll('section');
+        
+        function checkSections() {
+            const triggerBottom = window.innerHeight * 0.8;
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkSections);
+        checkSections(); // Check on page load
+    </script>
 </body>
 </html> 
