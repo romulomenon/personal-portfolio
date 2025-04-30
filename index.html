@@ -7,6 +7,16 @@
     <title>Romulo Pontes Menon - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Verificando se o CSS está carregando corretamente -->
+    <style>
+        /* Estilos de fallback caso o CSS principal não carregue */
+        body:not(:has(.container)) {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -70,7 +80,17 @@
     </div>
 
     <script>
-        // Smooth scrolling for anchor links
+        // Verificamos se tudo está carregando corretamente
+        document.addEventListener('DOMContentLoaded', function() {
+            // Marcamos todas as seções como ativas inicialmente para garantir animação
+            document.querySelectorAll('section').forEach(section => {
+                setTimeout(() => {
+                    section.classList.add('active');
+                }, 100);
+            });
+        });
+
+        // Smooth scrolling para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -86,24 +106,6 @@
                 }
             });
         });
-
-        // Highlight section when in viewport
-        const sections = document.querySelectorAll('section');
-        
-        function checkSections() {
-            const triggerBottom = window.innerHeight * 0.8;
-            
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                
-                if (sectionTop < triggerBottom) {
-                    section.classList.add('active');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', checkSections);
-        checkSections(); // Check on page load
     </script>
 </body>
 </html> 

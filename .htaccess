@@ -1,0 +1,31 @@
+# Garantir que os tipos MIME estejam configurados corretamente
+AddType text/css .css
+AddType text/javascript .js
+
+# Forçar carregamento do CSS
+<FilesMatch "\.(css)$">
+  Header set Cache-Control "no-cache, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires 0
+</FilesMatch>
+
+# Configurações para Vercel/Hosting estático
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Redirecionar para HTTPS se disponível
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Servir gzip se disponível
+  <IfModule mod_headers.c>
+    <FilesMatch "\.(js|css|html)$">
+      Header append Vary: Accept-Encoding
+    </FilesMatch>
+  </IfModule>
+</IfModule>
+
+# Definir charset
+AddDefaultCharset UTF-8 
