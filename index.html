@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio profissional de Romulo Pontes Menon, Desenvolvedor Web">
-    <title>Romulo Pontes Menon - Portfolio</title>
+    <meta name="description" content="Portfolio profissional de Rômulo Pontes Menon, Analista de Dados e Inteligência de Negócio Sênior">
+    <title>Rômulo Pontes Menon - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Verificando se o CSS está carregando corretamente -->
@@ -21,9 +21,13 @@
 <body>
     <div class="container">
         <header>
-            <h1>Romulo Pontes Menon</h1>
-            <p class="occupation">Desenvolvedor Web</p>
+            <h1>Rômulo Pontes Menon</h1>
+            <p class="occupation">Analista de Dados e Inteligência de Negócio Sênior</p>
             <div class="header-buttons">
+                <a href="#about" class="btn-nav">Sobre</a>
+                <a href="#skills" class="btn-nav">Habilidades</a>
+                <a href="#experience" class="btn-nav">Experiência</a>
+                <a href="#education" class="btn-nav">Formação</a>
                 <a href="#contact" class="btn-contact">Entre em Contato</a>
             </div>
         </header>
@@ -31,29 +35,87 @@
         <main>
             <section class="about" id="about">
                 <h2>Sobre Mim</h2>
-                <p>Bem-vindo ao meu portfolio! Sou um profissional apaixonado por tecnologia e desenvolvimento web, especializado em criar soluções web modernas e responsivas. Meu objetivo é desenvolver aplicações que proporcionem uma excelente experiência ao usuário.</p>
+                <p>Profissional com sólida experiência em Inteligência de Negócios e Gestão de Produtos Digitais, atuando em empresas como Itaú Unibanco, LATAM Airlines e Bip Brasil. Especialista em análise de dados, automação de processos e transformação digital, com resultados expressivos como a redução de 90% no tempo de execução de processos e o aumento de 1400% nas visualizações de plataformas digitais. Na Bip Brasil, lidero projetos de inteligência de dados, utilizando Python, BigQuery, Looker. Desenvolvi modelos preditivos, otimizei KPIs e gerei insights estratégicos que apoiam decisões de alto impacto.</p>
             </section>
             
             <section class="skills" id="skills">
                 <h2>Habilidades</h2>
                 <div class="skills-container">
                     <div class="skill-category">
-                        <h3>Front-end</h3>
+                        <h3>Análise de Dados</h3>
                         <ul class="skill-list">
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>JavaScript</li>
-                            <li>Responsive Design</li>
+                            <li>Python (pandas, selenium)</li>
+                            <li>SQL/DAX/ETL/BigQuery</li>
+                            <li>PowerBI/Tableau/Looker</li>
+                            <li>Modelagem de Dados</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Gestão</h3>
+                        <ul class="skill-list">
+                            <li>Metodologias Ágeis (Agile, Kanban, Scrum)</li>
+                            <li>Gestão de Projetos e Portfólio de TI</li>
+                            <li>OKRs e Gestão de Qualidade</li>
+                            <li>Análise Estratégica de Mercado</li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Ferramentas</h3>
                         <ul class="skill-list">
-                            <li>Git</li>
-                            <li>VS Code</li>
-                            <li>Figma</li>
+                            <li>Google Cloud / AWS</li>
+                            <li>Pacote Office / VBA</li>
+                            <li>JIRA</li>
                         </ul>
                     </div>
+                </div>
+            </section>
+            
+            <section class="experience" id="experience">
+                <h2>Experiência Profissional</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Bip Brasil</h3>
+                        <p class="timeline-period">Ago/2024 - Presente</p>
+                        <p class="timeline-role">Analista de Dados e Inteligência de Negócio Sênior</p>
+                        <ul class="timeline-activities">
+                            <li>Liderança na criação de estratégias de dados para otimizar a tomada de decisões</li>
+                            <li>Desenvolvimento de modelos de previsão e relatórios avançados utilizando Python, BigQuery, Google Studio e Looker</li>
+                            <li>Automação de processos de análise de dados</li>
+                            <li>Elaboração de dashboards em Looker para visualização e interpretação de dados complexos</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Itaú</h3>
+                        <p class="timeline-period">Mar/2019 - Fev/2023</p>
+                        <p class="timeline-role">Especialista em Gestão de Projetos e Produtos de TI - Iti</p>
+                        <ul class="timeline-activities">
+                            <li>Gerenciamento e priorização do portfólio TI de 10 squads</li>
+                            <li>Liderança em projeto de automação, reduzindo 90% do tempo de processo</li>
+                            <li>Liderança em projeto de UX, com aumento de 1400% em visualizações</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>LATAM Airlines</h3>
+                        <p class="timeline-period">Out/2015 - Jul/2018</p>
+                        <p class="timeline-role">Analista de Business Intelligence e Processos</p>
+                        <ul class="timeline-activities">
+                            <li>Análise preditiva e estratégica para otimização de precificação</li>
+                            <li>Desenvolvimento de soluções automatizadas para análise e visualização de dados</li>
+                            <li>Reconhecimento por inovações significativas, incluindo o projeto "Sharklets" em 6 Sigma</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="education" id="education">
+                <h2>Formação Acadêmica</h2>
+                <div class="education-item">
+                    <h3>Bacharelado em Ciência e Tecnologia</h3>
+                    <p>Universidade Federal do ABC | Concluído: 2023</p>
+                </div>
+                <div class="education-item">
+                    <h3>Técnico em Mecatrônica</h3>
+                    <p>ETEC Presidente Vargas | Concluído: 2009</p>
                 </div>
             </section>
             
@@ -67,12 +129,15 @@
                     <a href="mailto:romulomenon@gmail.com" class="email-btn">
                         Email
                     </a>
+                    <a href="tel:+5511993071904" class="phone-btn">
+                        +55 11 993-071-904
+                    </a>
                 </div>
             </section>
         </main>
         
         <footer>
-            <p>&copy; <span id="year">2024</span> Romulo Pontes Menon. Todos os direitos reservados.</p>
+            <p>&copy; <span id="year">2024</span> Rômulo Pontes Menon. Todos os direitos reservados.</p>
             <script>
                 document.getElementById('year').textContent = new Date().getFullYear();
             </script>

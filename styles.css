@@ -148,6 +148,27 @@ h1 {
     margin-top: var(--spacing-md);
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-nav {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-nav:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 .btn-contact {
@@ -326,54 +347,92 @@ h2::before {
 .social-links {
     display: flex;
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+    flex-wrap: wrap;
 }
 
-.linkedin-btn, .email-btn {
-    display: flex;
+.linkedin-btn, .email-btn, .phone-btn {
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: 0.7rem 1.5rem;
     border-radius: var(--radius-pill);
     text-decoration: none;
+    color: white;
     font-weight: 600;
     transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
     box-shadow: var(--shadow-sm);
+}
+
+.linkedin-btn::before, .email-btn::before, .phone-btn::before {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 8px;
+    font-size: 1.1rem;
 }
 
 .linkedin-btn {
     background-color: var(--color-linkedin);
-    color: white;
+    border-color: var(--color-linkedin);
 }
 
 .linkedin-btn::before {
-    content: "🔗";
+    content: '\f08c';
 }
 
 .linkedin-btn:hover {
     background-color: var(--color-linkedin-hover);
+    border-color: var(--color-linkedin-hover);
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
 }
 
 .linkedin-btn:active {
-    transform: translateY(-1px);
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
-/* Email Button */
 .email-btn {
-    background-color: var(--color-accent);
-    color: white;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .email-btn::before {
-    content: "✉️";
+    content: '\f0e0';
 }
 
 .email-btn:hover {
-    background-color: #e05f07;
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
+}
+
+.email-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.phone-btn {
+    background-color: #10b981;
+    border-color: #10b981;
+}
+
+.phone-btn::before {
+    content: '\f095';
+}
+
+.phone-btn:hover {
+    background-color: #059669;
+    border-color: #059669;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.phone-btn:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
 /* Footer */
@@ -394,16 +453,25 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.about, .skills, .contact {
-    animation: fadeIn 0.8s ease-out forwards;
+.about, .skills, .experience, .education, .contact {
+    animation: fadeIn 1s forwards;
+    opacity: 0;
 }
 
 .skills {
     animation-delay: 0.2s;
 }
 
+.experience {
+    animation-delay: 0.6s;
+}
+
+.education {
+    animation-delay: 0.8s;
+}
+
 .contact {
-    animation-delay: 0.4s;
+    animation-delay: 1s;
 }
 
 /* Media Queries */
@@ -443,6 +511,21 @@ footer {
         padding: 0.5rem 1.2rem;
         font-size: 0.9rem;
     }
+    
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn-nav {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-item {
+        padding-left: 25px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -473,4 +556,137 @@ footer {
     h2 {
         font-size: 1.5rem;
     }
+    
+    .header-buttons {
+        gap: 10px;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .timeline::before {
+        left: 5px;
+    }
+    
+    .timeline-item::before {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .btn-nav, .btn-contact {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Experience Section */
+.experience h2::before {
+    background-color: #4f46e5;
+}
+
+.timeline {
+    position: relative;
+    margin-top: var(--spacing-md);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 6px;
+    height: 100%;
+    width: 2px;
+    background: var(--color-primary);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: var(--spacing-md);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-primary);
+}
+
+.timeline-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: var(--color-primary-dark);
+}
+
+.timeline-period {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.timeline-role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-accent);
+}
+
+.timeline-activities {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.timeline-activities li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.timeline-activities li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+/* Education Section */
+.education h2::before {
+    background-color: #10b981;
+}
+
+.education-item {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    background-color: rgba(16, 185, 129, 0.05);
+    transition: transform var(--transition-fast);
+}
+
+.education-item:hover {
+    transform: translateX(5px);
+}
+
+.education-item h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.education-item p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
 } 
